@@ -1,6 +1,6 @@
 /* global OO, $ */
 ( function () {
-	var myWikis, closedWikis, branchSelect, form, submit, showClosed,
+	var myWikis, closedWikis, branchSelect, form, submit, showClosedButton,
 		patchesInput, presetInput, reposField, reposInput, reposFieldLabel,
 		$wikisTable = $( '.wikis' );
 
@@ -28,9 +28,9 @@
 			closedWikis = OO.ui.infuse( $( '.closedWikis' ) );
 			closedWikis.on( 'change', updateTableClasses );
 
-			if ( $( '.showClosed' ).length ) {
-				showClosed = OO.ui.infuse( $( '.showClosed' ) );
-				showClosed.on( 'click', function () {
+			if ( $( '.showClosedButton' ).length ) {
+				showClosedButton = OO.ui.infuse( $( '.showClosedButton' ) );
+				showClosedButton.on( 'click', function () {
 					myWikis.setSelected( true );
 					closedWikis.setSelected( true );
 					updateTableClasses();
